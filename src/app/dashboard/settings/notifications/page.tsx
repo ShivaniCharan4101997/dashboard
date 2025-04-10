@@ -2,14 +2,23 @@
 
 import React, { useState } from 'react';
 
+// Type for notification keys
+type NotificationType = 'email' | 'sms' | 'push';
+
+// Type for the notifications state
+type NotificationSettings = {
+    [key in NotificationType]: boolean;
+};
+
 function Notifications() {
-    const [notifications, setNotifications] = useState({
+    const [notifications, setNotifications] = useState<NotificationSettings>({
         email: true,
         sms: false,
         push: true,
     });
 
-    const toggleNotification = (type) => {
+    // Add type to the parameter
+    const toggleNotification = (type: NotificationType) => {
         setNotifications((prev) => ({
             ...prev,
             [type]: !prev[type],

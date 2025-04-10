@@ -11,21 +11,21 @@ function ProfileSettings() {
 
     const [profilePic, setProfilePic] = useState('https://i.pravatar.cc/150?img=47');
 
-    const handleChange = (e) => {
+    const handleChange = (e:	React.ChangeEvent<HTMLInputElement>) => {
         setFormData((prev) => ({
             ...prev,
             [e.target.name]: e.target.value,
         }));
     };
 
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
+    const handleImageChange = (e:	React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
         if (file) {
             setProfilePic(URL.createObjectURL(file));
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         alert('Profile updated!');
     };

@@ -1,4 +1,4 @@
-'use client'; // Add this if you're using Next.js 13+ with app directory
+'use client';
 
 import React, { useState } from 'react';
 
@@ -23,7 +23,7 @@ const initialTasks = [
     },
 ];
 
-const getStatusStyles = (status) => {
+const getStatusStyles = (status:string) => {
     switch (status) {
         case 'pending':
             return 'bg-yellow-100 text-yellow-800';
@@ -39,7 +39,7 @@ const getStatusStyles = (status) => {
 function Tasks() {
     const [tasks, setTasks] = useState(initialTasks);
 
-    const markAsComplete = (id) => {
+    const markAsComplete = (id:number) => {
         setTasks((prev) =>
             prev.map((task) =>
                 task.id === id ? { ...task, status: 'completed' } : task

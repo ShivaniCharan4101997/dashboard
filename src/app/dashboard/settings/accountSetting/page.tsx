@@ -9,16 +9,15 @@ function AccountSettings() {
         password: '',
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData((prev) => ({
             ...prev,
             [e.target.name]: e.target.value,
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // You can send formData to an API or log it
         console.log('Saved settings:', formData);
         alert('Settings saved!');
     };
