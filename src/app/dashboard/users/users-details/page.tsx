@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from "next/image";
 
 const user = {
     name: 'Shivani Sharma',
@@ -24,7 +25,7 @@ function Tasks() {
             <div className="max-w-4xl w-full bg-white p-8 rounded-xl shadow-lg">
                 {/* Profile Header */}
                 <div className="flex items-center space-x-6 mb-6">
-                    <img
+                    <Image
                         src={user.profilePic}
                         alt={user.name}
                         className="w-20 h-20 rounded-full object-cover border-2 border-gray-300"

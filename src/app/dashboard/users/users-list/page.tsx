@@ -51,7 +51,7 @@ function UsersList() {
                         </tr>
                         </thead>
                         <tbody className="divide-y divide-purple-100">
-                        {usersList.map((user, index) => (
+                        {usersList.map((user) => (
                             <tr
                                 key={user.id}
                                 className="hover:bg-purple-50 transition duration-300 ease-in-out"

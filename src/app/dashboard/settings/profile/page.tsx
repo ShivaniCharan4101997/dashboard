@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from "next/image";
 
 function ProfileSettings() {
     const [formData, setFormData] = useState({
@@ -37,7 +38,7 @@ function ProfileSettings() {
 
                 {/* Profile Picture */}
                 <div className="flex flex-col items-center mb-10">
-                    <img
+                    <Image
                         src={profilePic}
                         alt="Profile"
                         className="w-28 h-28 rounded-full object-cover border-4 border-blue-500 shadow-sm"
